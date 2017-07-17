@@ -1,0 +1,36 @@
+{
+  "name": "foursquare-vueify",
+  "version": "1.0.0",
+  "description": "Foursquare Vueify",
+  "main": "index.js",
+  "scripts": {
+    "vue": "browserify -t vueify -e build/js/vue/vue.js -o dist/vue.components.js",
+    "watch-vue": "watchify -t vueify -e build/js/vue/vue.js -o dist/vue.components.js"
+  },
+  "keywords": [
+    "vue",
+    "vueify",
+    "foursquare",
+    "browserify"
+  ],
+  "author": "Emre DOĞAN",
+  "license": "ISC",
+  "devDependencies": {
+    "aliasify": "^2.1.0",
+    "vueify": "^9.4.1",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "vue": "^2.4.1"
+  },
+  "browserify": {
+    "transform": [
+      "aliasify"
+    ]
+  },
+  "aliasify": {
+    "aliases": {
+      "vue": "vue/dist/vue.js"
+    }
+  }
+}
