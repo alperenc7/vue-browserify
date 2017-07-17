@@ -1,13 +1,32 @@
 window.Vue = require("vue");
+const VueRouter = require("vue-router");
 const HomeComponent = require("./components/home.vue")
-const VenueComponent = require("./components/venue.vue")
-const UserComponent = require("./components/user.vue")
-const TipComponent = require("./components/tip.vue")
+const VenueDetailsComponent = require("./components/venue-details.vue")
+
+const router = new VueRouter({
+  routes: [
+    {
+      path: "*",
+      component: HomeComponent
+    },
+    {
+      path: "/home",
+      component: HomeComponent,
+      name: "home"
+    },
+    {
+      path: "/venues/:id",
+      component: VenueDetailsComponent,
+      name: "venue.details"
+    }
+  ]
+})
 
 let self;
 
 window.app = new Vue({
   name: "app",
+  router,
   el: "#application",
   data() {
     return {
@@ -16,12 +35,6 @@ window.app = new Vue({
         longitude: 0
       }
     }
-  },
-  components: {
-    home: HomeComponent,
-    venue: VenueComponent,
-    tip: TipComponent,
-    user: UserComponent
   },
   created () {
     self = this
@@ -33,7 +46,6 @@ window.app = new Vue({
   methods: {
     getUserLocation(){
       navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position.coords)
         this.coords.latitude = position.coords.latitude
         this.coords.longitude = position.coords.longitude
       })
