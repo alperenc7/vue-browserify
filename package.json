@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "vue": "browserify -t vueify -e build/js/vue/vue.js -o dist/vue.components.js",
-    "watch-vue": "watchify -t vueify -e build/js/vue/vue.js -o dist/vue.components.js"
+    "watch-vue": "watchify -t vueify -e build/js/vue/vue.js -o dist/vue.components.js",
+    "build": "browserify -e build/js/build.js -o dist/build.js",
+    "watch-build": "watchify -e build/js/build.js -o dist/build.js"
   },
   "keywords": [
     "vue",
@@ -21,6 +23,9 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "axios": "^0.16.2",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
     "vue": "^2.4.1"
   },
   "browserify": {

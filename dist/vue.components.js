@@ -1,14 +1,72 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("button{\n  margin-top: 30px;\n}")
+;(function(){
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+module.exports = {
+  computed: {
+    coords () {
+      return this.$parent.coords
+    }
+  },
+  data: function () {
+    return {
+      search: null
+    }
+  },
+  methods: {
+    searchForVenues () {
+      axios.get("venues/search", {
+        params: {
+          ll: "32.23, 31.00"
+        }
+      }).then(response => {
+        console.log(response)
+      })
+    }
+  }
+}
+
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container",attrs:{"id":"homepage"}},[_c('div',{staticClass:"row"},[_c('div',{staticClass:"col-sm-10"},[_c('label',{attrs:{"for":"searchbar"}},[_vm._v("Arama")]),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.search),expression:"search"}],staticClass:"form-control",attrs:{"type":"text","placeholder":"Arama yapacağınız metni giriniz..."},domProps:{"value":(_vm.search)},on:{"input":function($event){if($event.target.composing){ return; }_vm.search=$event.target.value}}})]),_vm._v(" "),_c('div',{staticClass:"col-sm-2"},[_c('button',{staticClass:"btn btn-primary btn-block",on:{"click":_vm.searchForVenues}},[_vm._v("Ara")])])])])}
+__vue__options__.staticRenderFns = []
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-83abcf56", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-83abcf56", __vue__options__)
+  }
+})()}
+},{"vue":9,"vue-hot-reload-api":7,"vueify/lib/insert-css":10}],2:[function(require,module,exports){
 ;(function(){
 //
 //
 //
 
 module.exports = {
-  data: function () {
-    return {
-      emre: "doğan",
-      alperen: "çerezci"
+  props: {
+    tip: {
+      required: true,
+      type: Object
     }
   }
 }
@@ -24,24 +82,123 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-83abcf56", __vue__options__)
+    hotAPI.createRecord("data-v-4c499cd6", __vue__options__)
   } else {
-    hotAPI.reload("data-v-83abcf56", __vue__options__)
+    hotAPI.reload("data-v-4c499cd6", __vue__options__)
   }
 })()}
-},{"vue":6,"vue-hot-reload-api":4}],2:[function(require,module,exports){
-var Vue = require('vue/dist/vue.js');
-var HomeComponent = require("./components/home.vue")
+},{"vue":9,"vue-hot-reload-api":7}],3:[function(require,module,exports){
+;(function(){
+//
+//
+//
+
+module.exports = {
+  props: {
+    user: {
+      required: true,
+      type: Object
+    }
+  }
+}
+
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c("div")}
+__vue__options__.staticRenderFns = []
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-697a8d7e", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-697a8d7e", __vue__options__)
+  }
+})()}
+},{"vue":9,"vue-hot-reload-api":7}],4:[function(require,module,exports){
+;(function(){
+//
+//
+//
+
+module.exports = {
+  props: {
+    venue: {
+      type: Object,
+      required: true
+    }
+  },
+  data () {
+    return {
+      deneme: "emre"
+    }
+  }
+}
+
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c("div")}
+__vue__options__.staticRenderFns = []
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-672560e9", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-672560e9", __vue__options__)
+  }
+})()}
+},{"vue":9,"vue-hot-reload-api":7}],5:[function(require,module,exports){
+window.Vue = require('vue/dist/vue.js');
+const HomeComponent = require("./components/home.vue")
+const VenueComponent = require("./components/venue.vue")
+const UserComponent = require("./components/user.vue")
+const TipComponent = require("./components/tip.vue")
+
+let self;
 
 window.app = new Vue({
   name: "app",
   el: "#application",
+  data() {
+    return {
+      coords: {
+        latitude: 0,
+        longitude: 0
+      }
+    }
+  },
   components: {
-    home: HomeComponent
+    home: HomeComponent,
+    venue: VenueComponent,
+    tip: TipComponent,
+    user: UserComponent
+  },
+  created () {
+    self = this
+    self.getUserLocation()
+    setInterval(() => {
+      self.getUserLocation()
+    }, 1000 * 60 * 45) // 45 Minutes
+  },
+  methods: {
+    getUserLocation(){
+      navigator.geolocation.getCurrentPosition((position) => {
+        console.log(position.coords)
+        this.coords.latitude = position.coords.latitude
+        this.coords.longitude = position.coords.longitude
+      })
+    }
   }
 })
 
-},{"./components/home.vue":1,"vue/dist/vue.js":5}],3:[function(require,module,exports){
+},{"./components/home.vue":1,"./components/tip.vue":2,"./components/user.vue":3,"./components/venue.vue":4,"vue/dist/vue.js":8}],6:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -227,7 +384,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],4:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var Vue // late bind
 var version
 var map = window.__VUE_HOT_MAP__ = Object.create(null)
@@ -373,7 +530,7 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],5:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 (function (global){
 /*!
  * Vue.js v2.4.1
@@ -10434,7 +10591,7 @@ return Vue$3;
 })));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],6:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function (process,global){
 /*!
  * Vue.js v2.4.1
@@ -17846,4 +18003,29 @@ setTimeout(function () {
 module.exports = Vue$3;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":3}]},{},[2]);
+},{"_process":6}],10:[function(require,module,exports){
+var inserted = exports.cache = {}
+
+function noop () {}
+
+exports.insert = function (css) {
+  if (inserted[css]) return noop
+  inserted[css] = true
+
+  var elem = document.createElement('style')
+  elem.setAttribute('type', 'text/css')
+
+  if ('textContent' in elem) {
+    elem.textContent = css
+  } else {
+    elem.styleSheet.cssText = css
+  }
+
+  document.getElementsByTagName('head')[0].appendChild(elem)
+  return function () {
+    document.getElementsByTagName('head')[0].removeChild(elem)
+    inserted[css] = false
+  }
+}
+
+},{}]},{},[5]);
