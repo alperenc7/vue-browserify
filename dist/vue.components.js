@@ -18,7 +18,7 @@ var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("button{\
 module.exports = {
   computed: {
     coords () {
-      return this.$parent.coords
+      return this.$parent.coords.latitude + ", " + this.$parent.coords.longitude
     }
   },
   data: function () {
@@ -30,7 +30,7 @@ module.exports = {
     searchForVenues () {
       axios.get("venues/search", {
         params: {
-          ll: "32.23, 31.00"
+          ll: this.coords
         }
       }).then(response => {
         console.log(response)
@@ -43,7 +43,7 @@ module.exports = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container",attrs:{"id":"homepage"}},[_c('div',{staticClass:"row"},[_c('div',{staticClass:"col-sm-10"},[_c('label',{attrs:{"for":"searchbar"}},[_vm._v("Arama")]),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.search),expression:"search"}],staticClass:"form-control",attrs:{"type":"text","placeholder":"Arama yapacağınız metni giriniz..."},domProps:{"value":(_vm.search)},on:{"input":function($event){if($event.target.composing){ return; }_vm.search=$event.target.value}}})]),_vm._v(" "),_c('div',{staticClass:"col-sm-2"},[_c('button',{staticClass:"btn btn-primary btn-block",on:{"click":_vm.searchForVenues}},[_vm._v("Ara")])])])])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container",attrs:{"id":"homepage"}},[_c('div',{staticClass:"row"},[_c('div',{staticClass:"col-sm-10"},[_c('label',{attrs:{"for":"searchbar"}},[_vm._v("Arama")]),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.search),expression:"search"}],staticClass:"form-control",attrs:{"type":"text","placeholder":"Arama yapacağınız metni giriniz..."},domProps:{"value":(_vm.search)},on:{"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13)){ return null; }_vm.searchForVenues($event)},"input":function($event){if($event.target.composing){ return; }_vm.search=$event.target.value}}})]),_vm._v(" "),_c('div',{staticClass:"col-sm-2"},[_c('button',{staticClass:"btn btn-primary btn-block",on:{"click":_vm.searchForVenues}},[_vm._v("Ara")])])])])}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -57,26 +57,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 },{"vue":9,"vue-hot-reload-api":7,"vueify/lib/insert-css":10}],2:[function(require,module,exports){
-;(function(){
-//
-//
-//
-
-module.exports = {
-  props: {
-    tip: {
-      required: true,
-      type: Object
-    }
-  }
-}
-
-})()
-if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
-if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c("div")}
-__vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
