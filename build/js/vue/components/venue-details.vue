@@ -57,4 +57,8 @@
     margin-right:    5px;
     border:          1px solid #EEEEEE;
   }
+  
+  .deneme{
+    border: 1px solid red;
+  }
 </style>

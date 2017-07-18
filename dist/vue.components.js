@@ -68,7 +68,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 },{"./venue.vue":3,"vue":9,"vue-hot-reload-api":6,"vueify/lib/insert-css":10}],2:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".venue-images{\n  margin-left:  0;\n  padding-left: 0;\n  display:      table;\n}\n\n.venue-images li{\n  list-style-type: none;\n  display:         inline-table;\n  padding:         5px;\n  margin-right:    5px;\n  border:          1px solid #EEEEEE;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".venue-images{\n  margin-left:  0;\n  padding-left: 0;\n  display:      table;\n}\n\n.venue-images li{\n  list-style-type: none;\n  display:         inline-table;\n  padding:         5px;\n  margin-right:    5px;\n  border:          1px solid #EEEEEE;\n}\n\n.deneme{\n  border: 1px solid red;\n}")
 ;(function(){
 //
 //
