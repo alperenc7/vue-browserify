@@ -7,6 +7,7 @@
           <img :src="getProperImage(photo,100,100)">
         </li>
       </ul>
+      <!--bitane ul olacak ul tip leri alıcak stylere dikkat tiplerin içinden userlara router olacak-->
     </div>
     <div v-else>
       <div class="text-center">
